@@ -32,6 +32,9 @@ const UserSchema = new mongoose.Schema({
     default:"user"
     //roles user and admin
   },
+  savedTasks: [{
+    type: mongoose.Schema.Types.ObjectId, ref: "usertasks"
+  }]
 });
 
 export const UserModel = mongoose.model("users", UserSchema);
